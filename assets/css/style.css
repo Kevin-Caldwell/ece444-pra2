@@ -72,7 +72,7 @@
 }
 
 .angellist:hover {
-  background-color: grey;
+  background-color: rgb(184, 105, 234);
 }
 
 .github:hover {
@@ -549,7 +549,7 @@ small {
 /* main .teal-text */
 
 .teal-text {
-  color: #008073 !important;
+  color: #1f164d !important;
 }
 
 /* .teal-text {
@@ -559,7 +559,7 @@ small {
 /* .teal */
 
 .teal {
-  background-color: #008073 !important;
+  background-color: #4f81ff !important;
 }
 
 /* .teal {
