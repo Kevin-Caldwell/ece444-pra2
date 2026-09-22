@@ -363,104 +363,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
     </section>
-
-    <!-- Fourth Section: Projects -->
+    <!-- Section: Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
-        <div class="row">
+        
+        <!-- Unique container for dynamically loaded projects -->
+        <div id="projects-container" class="row"></div>
 
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-content">
-                <span class="card-title teal-text">Maximal Independent Set (MIS) Benchmarking</span>
-                <p>Single- and multi-threaded MIS algorithm implementations benchmarked on the PBBS suite against a proposed countingMIS solution.</p>
-              </div>
-              <div class="card-action">
-                <a aria-label="Visit Kevin's GitHub profile" href="https://github.com/kevin-caldwell" target="_blank"
-                  data-position="top" data-tooltip="View GitHub Profile"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                    class="fa fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-content">
-                <span class="card-title teal-text">Hybrid Truck-Drone Delivery Systems (HTDDS)</span>
-                <p>Genetic algorithm and TSP-heuristic based energy consumption modelling for hybrid truck-drone delivery, accelerated with CUDA C/C++.</p>
-              </div>
-              <div class="card-action">
-                <a aria-label="Visit Kevin's GitHub profile" href="https://github.com/kevin-caldwell" target="_blank"
-                  data-position="top" data-tooltip="View GitHub Profile"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                    class="fa fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-content">
-                <span class="card-title teal-text">FINCH Hyperspectral Image Compression</span>
-                <p>Embedded C implementation of the CCSDS 123.0-B-2 compression algorithm for the FINCH nanosatellite payload, achieving 50% compression.</p>
-              </div>
-              <div class="card-action">
-                <a aria-label="Visit Kevin's GitHub profile" href="https://github.com/kevin-caldwell" target="_blank"
-                  data-position="top" data-tooltip="View GitHub Profile"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                    class="fa fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-content">
-                <span class="card-title teal-text">RV32I Single Bus Processor</span>
-                <p>A single bus processor built in System Verilog for the DE10-Lite FPGA, extended to support RV32I compute instructions at 3 clock cycles per instruction.</p>
-              </div>
-              <div class="card-action">
-                <a aria-label="Visit Kevin's GitHub profile" href="https://github.com/kevin-caldwell" target="_blank"
-                  data-position="top" data-tooltip="View GitHub Profile"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                    class="fa fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-content">
-                <span class="card-title teal-text">Rover CAN Communication Library</span>
-                <p>A CAN library enabling complex communication between rover subsystems, extended to send contiguous data blocks up to 65 kB for soil spectrometer data.</p>
-              </div>
-              <div class="card-action">
-                <a aria-label="Visit Kevin's GitHub profile" href="https://github.com/kevin-caldwell" target="_blank"
-                  data-position="top" data-tooltip="View GitHub Profile"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                    class="fa fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-content">
-                <span class="card-title teal-text">Generative AI Framework for Geekbench</span>
-                <p>A cross-platform Gen AI benchmarking framework supporting MLX, OpenVINO, LiteRT/TFLite, Llama.cpp, Windows ML, and CoreAI backends.</p>
-              </div>
-              <div class="card-action">
-                <a aria-label="Visit Kevin's GitHub profile" href="https://github.com/kevin-caldwell" target="_blank"
-                  data-position="top" data-tooltip="View GitHub Profile"
-                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                    class="fa fa-github"></i></a>
-              </div>
-            </div>
-          </div>
-
+        <!-- Load More Button -->
+        <div class="text-center" style="margin-top: 20px;">
+          <button id="load-more-btn" class="btn waves-effect waves-light teal">
+            Load More Projects
+          </button>
         </div>
+
       </div>
     </section>
 
@@ -659,6 +576,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })
     })
   </script>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
