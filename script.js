@@ -1,4 +1,4 @@
-// 1. Array storing at least 4 projects
+// 1. Array storing project data
 const projectsData = [
   {
     title: "Maximal Independent Set (MIS) Benchmarking",
@@ -25,12 +25,16 @@ const projectsData = [
 let visibleCount = 0;
 const PROJECTS_PER_BATCH = 2;
 
-// 3. Function to render project data into HTML
+// Function to render projects dynamically
 function loadMoreProjects() {
   const container = document.getElementById("projects-container");
   const loadMoreBtn = document.getElementById("load-more-btn");
 
-  // Get the next batch of projects
+  if (!container) {
+    console.error("Error: Could not find element with id='projects-container' in index.html");
+    return;
+  }
+
   const nextBatch = projectsData.slice(visibleCount, visibleCount + PROJECTS_PER_BATCH);
 
   nextBatch.forEach(project => {
@@ -56,23 +60,53 @@ function loadMoreProjects() {
 
   visibleCount += PROJECTS_PER_BATCH;
 
-  // Re-initialize Materialize tooltips for newly injected DOM elements
+  // Re-initialize Materialize tooltips if jQuery is present
   if (window.jQuery && $.fn.tooltip) {
     $('.tooltipped').tooltip({ delay: 50 });
   }
 
-  // 6. Hide the button after all projects are displayed
-  if (visibleCount >= projectsData.length) {
+  // Hide button once all items are displayed
+  if (loadMoreBtn && visibleCount >= projectsData.length) {
     loadMoreBtn.style.display = "none";
   }
 }
 
-// 4 & 5. Initial load of 2 projects & event listener setup
-document.addEventListener("DOMContentLoaded", () => {
-  loadMoreProjects(); // Displays first 2 projects on load
+// Master Initialization Function
+function initApp() {
+  // Load initial batch of 2 projects
+  loadMoreProjects();
 
+  // Attach Load More Listener
   const loadMoreBtn = document.getElementById("load-more-btn");
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", loadMoreProjects);
   }
+
+  /// Attach Dark Mode Listener to all toggle buttons (Desktop & Mobile)
+const themeToggles = document.querySelectorAll(".dark-mode-toggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+themeToggles.forEach(toggle => {
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
 });
+}
+
+// Execute immediately if DOM is already ready, otherwise wait for event
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}

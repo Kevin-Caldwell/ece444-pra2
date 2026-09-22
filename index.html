@@ -78,7 +78,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <li class="logo">
         <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="logo-container grey-blue-text">
+          class="logo-container sidebar-logo-link grey-blue-text">
           <img src="/assets/img/IMG_9344.png" class="circle img-responsive profile-pic" alt="Kevin Caldwell Profile Picture">
         </a>
       </li>
@@ -126,6 +126,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="bold">
         <a aria-label="Navigate to the Places Travelled section" href="#travel" class="waves-effect waves-dark teal-text">
           <i class="fa fa-map-marker small"></i><span>Places Travelled</span>
+        </a>
+      </li>
+      <li class="bold">
+        <a class="dark-mode-toggle waves-effect waves-dark teal-text" style="cursor: pointer;">
+          <i class="fa fa-moon-o small"></i><span>Dark Mode</span>
         </a>
       </li>
     </ul>
@@ -178,6 +183,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <i class="fa fa-map-marker small"></i><span>Places Travelled</span>
         </a>
       </li>
+
+      <li class="bold">
+        <a class="dark-mode-toggle waves-effect waves-dark teal-text" style="cursor: pointer;">
+          <i class="fa fa-moon-o small"></i><span>Dark Mode</span>
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -223,19 +234,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           I am an Electrical and Computer Engineering student at the University of Toronto in the Engineering Science
           (PEY) program, graduating April 2027.
         </p>
-        <p>
+        <div>
           <ul>
             <li><b>Languages &amp; HDL:</b> C/C++, Python, RISC-V and NIOS V ASM, ARM C, CUDA, System Verilog, Verilog, Swift, MATLAB</li>
             <li><b>Software &amp; Platforms:</b> STM32, Git, GitHub, Quartus Prime, ModelSim/Questa, Altera MAX10 and Cyclone V FPGA, Windows, Linux, MacOS</li>
           </ul>
-        </p>
+        </div>
         <p>
           Looking for an opportunity to work in a challenging position combining my skills in embedded systems,
           FPGA/hardware development, and high-performance software engineering.
         </p>
       </div>
     </section>
-
 
     <!-- Third Section: Experience -->
     <section id="experience" class="section scrollspy">
@@ -363,7 +373,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
     </section>
-    <!-- Section: Projects -->
+
+    <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
@@ -500,13 +511,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="card-content">
             <p class="flow-text">Here are some places I have visited or plan to explore:</p>
             
-            <!-- Google Map Embed Container -->
-            <div class="map-responsive" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 20px; border-radius: 8px;">
-            <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d170381.29302146667!2d-53.89850439758778!3d48.14480079864302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b747e1c95b4a231%3A0xbfadf44ea321f21b!2sRandom%20Island!5e0!3m2!1sen!2sca!4v1790089797807!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
+            <div class="row" style="margin-top: 20px;">
+              <!-- Random Island Map -->
+              <div class="col s12 m6" style="margin-bottom: 15px;">
+                <div class="map-responsive" style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 8px;">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d170381.29302146667!2d-53.89850439758778!3d48.14480079864302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b747e1c95b4a231%3A0xbfadf44ea321f21b!2sRandom%20Island!5e0!3m2!1sen!2sca!4v1790089797807!5m2!1sen!2sca" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                  </iframe>
+                </div>
+              </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.35442633572!2d12.371190582817784!3d41.91020879194427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy!5e0!3m2!1sen!2sca!4v1790089865675!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <!-- Rome Map -->
+              <div class="col s12 m6" style="margin-bottom: 15px;">
+                <div class="map-responsive" style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 8px;">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.35442633572!2d12.371190582817784!3d41.91020879194427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy!5e0!3m2!1sen!2sca!4v1790089865675!5m2!1sen!2sca" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                  </iframe>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -570,9 +597,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $(".scrollspy").scrollSpy()
       // Initialize collapse button
       $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        menuWidth: 190,
+        edge: "left",
+        closeOnClick: true
       })
     })
   </script>
