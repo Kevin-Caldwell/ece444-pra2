@@ -1,3 +1,4 @@
+```mermaid
 package "Client Tier" {
     [Web Browser / User Agent] as Browser
 }
@@ -24,24 +25,21 @@ package "Data Tier" {
     }
 }
 
-' Browser Connections
 Browser --> BaseTemplate : HTTP GET / POST Requests
 BaseTemplate --> DashView : Extends
 BaseTemplate --> ReserveView : Extends
 BaseTemplate --> PickupView : Extends
 
-' Presentation to Controller
 DashView --> AppController : GET / (View Listings)
 ReserveView --> AppController : POST /post/<id> (Reserve Spot)
 PickupView --> AppController : POST /pickup/<id> (Deduct Servings & Submit Feedback)
 
-' Controller to Business Logic
 AppController --> StockMgr : Validate & Update Quantities
 AppController --> NotifEngine : Trigger Real-time Alerts
 AppController --> SafetyMonitor : Enforce 2-Hour Expiration Rule
 
-' Business Logic to Data Store
 StockMgr --> PostingsDB : Read / Write Inventory
 NotifEngine --> NotifDB : Fetch Active Alerts
 AppController --> FeedbackDB : Record User Reviews & Complaints
 SafetyMonitor --> PostingsDB : Expire Stale Postings
+```
